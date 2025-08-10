@@ -27,7 +27,6 @@ export default [
       json(),
       babel(getBabelOptions({ useESModules: true }, '>1%, not dead, not ie 11, not op_mini all')),
       resolve({ extensions }),
-      terser(),
       filesize(),
     ],
   },
@@ -35,6 +34,6 @@ export default [
     input: `./src/index.ts`,
     output: { file: `dist/index.cjs`, format: 'cjs' },
     external,
-    plugins: [json(), babel(getBabelOptions({ useESModules: false })), resolve({ extensions }), terser(), filesize()],
+    plugins: [json(), babel(getBabelOptions({ useESModules: false })), resolve({ extensions }), filesize()],
   },
 ];
